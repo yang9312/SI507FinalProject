@@ -11,7 +11,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/table")
+@app.route("/table/")
 def table():
     return render_template('table.html')
 
@@ -22,7 +22,7 @@ def table_data():
     return json.dumps(process_table_data(DBNAME, suptype=suptype))
 
 
-@app.route("/plot", methods=['POST', 'GET'])
+@app.route("/plot/", methods=['POST', 'GET'])
 def plot():
     div = '<div></div>'
     if request.method == 'POST':
