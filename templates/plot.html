@@ -2,9 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plot.css') }}">
 </head>
+
 <body>
-$END$
+    <div class="row header">
+        <div class="col-md-10">
+            <h1 class="title">Estee Lauder - Product Plot</h1>
+        </div>
+
+        <div class="col-md-2" align="right">
+            <a class="back" href="/">Back</a>
+        </div>
+    </div>
+
+    <div class="plot">
+        <div class="col-md-3 plot-type">
+            <div class="plot-detail" id="bar">
+                <br/>
+                <form action="/plot" method="POST">
+                    <input type="hidden" name="plot-type" value="bar"/>
+                    <button class="button-plot" onclick="bar_plot()">Bar plot</button>
+
+                    <br/><br/>
+
+                    <span> Suptype </span>
+                    <select class="selection" name="suptype">
+                        <option value="None">All</option>
+                        <option value="Skincare">Skincare</option>
+                        <option value="Makeup">Makeup</option>
+                        <option value="Fragrance">Fragrance</option>
+                    </select>
+
+                    <br/><br/>
+
+                    <span> Content </span>
+                    <select class="selection" name="content">
+                        <option value="rating">Star Rating</option>
+                        <option value="review">Review Count</option>
+                    </select>
+
+                </form>
+            </div>
+
+            <div class="plot-detail" id="pie">
+                <br/>
+                <form action="/plot" method="POST">
+                    <input type="hidden" name="plot-type" value="pie"/>
+                    <button class="button-plot" onclick="pie_plot()">Pie plot</button>
+
+                    <br/><br/>
+
+                    <span> ProductId </span>
+                    <input name="product_id"/>
+
+                    <br/><br/>
+
+                    <span> Content </span>
+                    <select class="selection" name="content">
+                        <option value="age">Age</option>
+                        <option value="skintype">Skin Type</option>
+                        <option value="usingyear">Using Year</option>
+                    </select>
+
+                </form>
+            </div>
+
+            <div class="plot-detail" id="scatter">
+                <br/>
+                <form action="/plot" method="POST">
+                    <input type="hidden" name="plot-type" value="scatter"/>
+                    <button class="button-plot" onclick="scatter_plot()">Scatter plot</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-9 plot-content">{{ div|safe }}</div>
+    </div>
 </body>
 </html>

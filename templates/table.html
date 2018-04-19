@@ -2,9 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
 </head>
+
+
+
 <body>
-$END$
+    <div class="row header">
+        <div class="col-md-10">
+            <h1 class="title">Estee Lauder - Product Table</h1>
+        </div>
+
+        <div class="col-md-2" align="right">
+            <a class="back" href="/">Back</a>
+        </div>
+    </div>
+
+    <div class="type">
+        <button class="button-suptype" id="Skincare">Skincare</button>
+        <button class="button-suptype" id="Makeup">Makeup</button>
+        <button class="button-suptype" id="Fragrance">Fragrance</button>
+        <!--<select id="suptype" onchange="get_data()">-->
+            <!--<option value="Skincare">Skincare</option>-->
+            <!--<option value="Makeup">Makeup</option>-->
+            <!--<option value="Fragrance">Fragrance</option>-->
+        <!--</select>-->
+    </div>
+
+    <br/>
+    <div class="table">
+        <table id="product-table"></table>
+    </div>
 </body>
+
+<script>
+    <!--alert($("#suptype").val());-->
+
+    var table_obj;
+
+    $("button").click(function(){
+        var suptype = $(this).attr("id");
+
+        if (typeof(table_obj) != "undefined") {
+            table_obj.destroy();
+        };
+
+        table_obj = $("#product-table").DataTable({
+            ajax: {
+                url: "/table/data/?suptype=" + suptype,
+                dataSrc: ""
+            },
+            columns: [
+                {
+                    data: "ProductId",
+                    title: "ProductId",
+                    width: "10%"
+                },
+                {
+                    data: "PrimaryName",
+                    title: "PrimaryName"
+                },
+                {
+                    data: "SubName",
+                    title: "SubName"
+                },
+                {
+                    data: "SubType",
+                    title: "SubType"
+                },
+                {
+                    data: "StarRating",
+                    title: "StarRating",
+                    className: "edit-td",
+                    width: "8%"
+                },
+                {
+                    data: "ReviewCount",
+                    title: "ReviewCount",
+                    className: "edit-td",
+                    width: "8%"
+                }
+            ],
+            scrollY: 580,
+            pageLength: 20,
+            lengthMenu: [[20, 50, -1], [20, 50, "ALL"]]
+        });
+    })
+
+</script>
 </html>

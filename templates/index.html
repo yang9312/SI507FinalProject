@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
+
+
+
 <body>
-$END$
+    <div class="row header">
+        <div class="col-md-10">
+            <h1 class="title">Estee Lauder</h1>
+        </div>
+        <div class="col-md-2">
+            <p class="belongs">SI507 Final Project</p>
+            <p class="belongs">Yang Yang, 8922 1006</p>
+        </div>
+    </div>
+
+    <div class="row img">
+        <img src="{{ url_for('static', filename='esteelauder_picture.jpg') }}" height=780 />
+
+    </div>
+
+    <div class="row foot">
+        <div class="col-md-6">
+            <button class="choice" onclick="table()"><strong>Table</strong></button>
+        </div>
+
+        <div class="col-md-6">
+            <button class="choice" onclick="plot()"><strong>Plot</strong></button>
+        </div>
+    </div>
 </body>
+
+<script>
+    function table(){
+        window.location.href="/table";
+    }
+
+    function plot(){
+        window.location.href="/plot";
+    }
+</script>
 </html>
