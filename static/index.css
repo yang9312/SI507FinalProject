@@ -1,0 +1,37 @@
+
+    .header {
+        height: 80px;
+        background-color: #000000
+    }
+
+    .title {
+        color: #FFFFFF;
+        padding-left: 30px
+    }
+
+    .belongs{
+        color: #FFFFFF;
+        font-size: 12px;
+        padding-right: 3px;
+        position: relative;
+        top: 12px
+    }
+
+    .img {
+        height: 700px;
+        background-color: #000000;
+        padding-left: 80px
+    }
+
+    .foot {
+        height: 60px
+    }
+
+    .choice {
+        width: 105%;
+        height: 60px;
+        border: 0px;
+        font-size: 30px;
+        background-color: #000000;
+        color: #FFFFFF
+    }

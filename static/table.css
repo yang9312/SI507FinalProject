@@ -1,0 +1,31 @@
+
+    .header {
+        height: 80px;
+        background-color: #000000
+    }
+
+    .title {
+        color: #FFFFFF;
+        padding-left: 30px
+    }
+
+    .back {
+        color: #FFFFFF;
+        font-size: 20px;
+        padding-right: 20px;
+        position: relative;
+        top: 40px
+    }
+
+    .table {
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .edit-td {
+        text-align: center
+    }
+
+    .button-suptype {
+
+    }

@@ -1,0 +1,40 @@
+   .header {
+        height: 80px;
+        background-color: #000000
+    }
+
+    .title {
+        color: #FFFFFF;
+        padding-left: 30px
+    }
+
+    .back {
+        color: #FFFFFF;
+        font-size: 20px;
+        padding-right: 20px;
+        position: relative;
+        top: 40px
+    }
+
+    .plot-type {
+        background-color: #FFFFFF;
+        height: 750px
+    }
+
+    .plot-detail {
+        height: 250px;
+        text-align: center
+    }
+
+    .button-plot {
+        width: 90%;
+        height: 50px
+    }
+
+    .selection {
+        width: 120px
+    }
+
+    .plot-content {
+        height: 700px
+    }
