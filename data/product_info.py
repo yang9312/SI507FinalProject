@@ -143,7 +143,7 @@ def get_review_data():
         res = CACHE_DICTION[p["ProductId"]]
         for r in res:
             review_lis.append(r)
-        time.sleep(5)
+        #time.sleep(5)
     return review_lis
                 
 
