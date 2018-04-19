@@ -1,4 +1,5 @@
 import sqlite3
+from settings import *
 
 
 class TypeRating():
@@ -64,7 +65,8 @@ class Customer():
         return "{} | {} | {} | {} | {}".format(self.avg_age(), self.age_group(),
                                                self.SkinType, self.UsingYear, self.Rating)
 
-DBNAME = "data/esteelauder.db"
+
+DBNAME = base_dir + "/data/esteelauder.db"
 
 
 def process_bar_data(db_name, sup=None):

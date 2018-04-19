@@ -2,8 +2,10 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 from plotly.offline import plot as off_plot
 import data.data_processing as d
+from settings import base_dir
 
-#DBNAME = "data/esteelauder.db"
+
+DBNAME = base_dir + "/data/esteelauder.db"
 
 
 def bar_plot(db_name, sup=None, content="rating"):
