@@ -162,6 +162,7 @@ Plotly API is required for running the program.
 - Create one python file
 
 ``> touch plotly.py``
+
 ``> open plotly.py``
 
 - Write codes
@@ -171,6 +172,7 @@ Plotly API is required for running the program.
     set_credentials_file(username=<YOUR USERNAME>, api_key=<YOUR API KEY>)
     ```
 - Run
+
 ``> python3 plotly.py``
 
 - Run the program
